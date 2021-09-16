@@ -1,0 +1,21 @@
+server:
+  port: 8088
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    virtual-host: /songxl #虚拟主机
+    username: songxl
+    password: songxl
+    publisher-confirms: true #消息发送到交换器确认
+    publisher-returns: true #消息发送到队列确认
+  thymeleaf:
+    cache: false
+#mqtt配置 单配置时需要用户密码、tcp连接1883端口url、默认topic、前端订阅者url
+rabbitmq:
+  mqtt:
+    url: tcp://localhost:1883 #mqtt长连接地址
+    username: songxl
+    password: songxl
+    mqtt_url: ws://localhost:15675/ws #前端连接地址
+    defaultTopic: testTopic
